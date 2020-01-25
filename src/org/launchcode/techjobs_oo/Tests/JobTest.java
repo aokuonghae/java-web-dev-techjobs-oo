@@ -41,5 +41,24 @@ public class JobTest {
         assertFalse(job1.equals(job2));
 
     }
+    @Test
+
+    public void testToStringStartsAndEndsWithNewLine(){
+        job1=new Job();
+//        job2=new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("ID: \n"+
+                "Name: \n" +
+                "Employer: \n" +
+                "Location: \n" +
+                "Position Type: \n" +
+                "Core Competency: \n", job1.toString());
+    }
+//      assertEquals("ID: 1 \n"+
+//                "Name: Data not available \n" +
+//                "Employer: Data not available \n" +
+//                "Location: Data not available\n" +
+//                "Position Type: Data not available\n" +
+//                "Core Competency: Data not available\n", job2.toString());
+//    }
 
 }

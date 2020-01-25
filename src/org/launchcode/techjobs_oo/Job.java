@@ -58,10 +58,6 @@ public class Job {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Employer getEmployer() {
         return employer;
     }
@@ -94,4 +90,39 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    @Override
+    public String toString() {
+        int counter=0;
+        if ( positionType.getValue()== "" || positionType.getValue() == null){
+            this.positionType.setValue("Data not available");
+            counter+=1;
+        }
+        if (employer.getValue()=="" || employer.getValue()==null){
+            this.employer.setValue("Data not available");
+            counter+=1;
+        }
+        if (location.getValue()=="" || employer.getValue()==null){
+            this.location.setValue("Data not available");
+            counter+=1;
+        }
+        if (coreCompetency.getValue()=="" || coreCompetency.getValue()==null){
+            this.location.setValue("Data not available");
+            counter+=1;
+        }
+        if (this.name == "" || this.name == null){
+            this.name="Data not available";
+            counter +=1;
+        }
+        if (counter==5){
+            return "OOPS! This job does not seem to exist.";
+        } else {
+            return  "\nID: " + this.id + "\n"+
+                    "Name: " + this.name +  "\n"+
+                    "Employer: " + this.employer + "\n"+
+                    "Location: " + this.location + "\n"+
+                    "Position Type: " + this.positionType + "\n"+
+                    "Core Competency: " + this.coreCompetency + "\n";
+        }
+
+    }
 }

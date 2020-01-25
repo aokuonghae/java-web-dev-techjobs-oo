@@ -97,19 +97,19 @@ public class Job {
             this.positionType.setValue("Data not available");
             counter+=1;
         }
-        if (employer.getValue()=="" || employer.getValue()==null){
+        if (employer.getValue().equals("") || employer.getValue()==null){
             this.employer.setValue("Data not available");
             counter+=1;
         }
-        if (location.getValue()=="" || employer.getValue()==null){
+        if (location.getValue().equals("") || employer.getValue()==null){
             this.location.setValue("Data not available");
             counter+=1;
         }
-        if (coreCompetency.getValue()=="" || coreCompetency.getValue()==null){
+        if (coreCompetency.getValue().equals("") || coreCompetency.getValue()==null){
             this.location.setValue("Data not available");
             counter+=1;
         }
-        if (this.name == "" || this.name == null){
+        if (this.name.equals("")){
             this.name="Data not available";
             counter +=1;
         }

@@ -1,13 +1,11 @@
 package org.launchcode.techjobs_oo.Tests;
 
 import org.junit.Before;
-import org.launchcode.techjobs_oo.Employer;
-import org.launchcode.techjobs_oo.Job;
-import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class JobTestB {
     private Job job1, job2, job3, job4, job5;
@@ -28,18 +26,18 @@ public class JobTestB {
     public void testSettingJobId() {
         assertEquals(1, job2.getId() - job1.getId());
     }
-
+    @Test
     public void testJobConstructorSetsAllFields() {
-        assertTrue(job4.getName() instanceof String);
-        assertEquals("Web Developer", job4.getName());
-        assertTrue(job4.getEmployer() instanceof Employer);
-        assertEquals("LaunchCode", job4.getEmployer().getValue());
-        assertTrue(job4.getLocation() instanceof Location);
-        assertEquals("StL", job4.getLocation().getValue());
-        assertTrue(job4.getPositionType() instanceof PositionType);
-        assertEquals("Back-end developer", job4.getPositionType().getValue());
-        assertTrue(job4.getCoreCompetency() instanceof CoreCompetency);
-        assertEquals("Java", job4.getCoreCompetency().getValue());
+        assertTrue(job3.getName() instanceof String);
+        assertEquals("Web Developer", job3.getName());
+        assertTrue(job3.getEmployer() instanceof Employer);
+        assertEquals("LaunchCode", job3.getEmployer().getValue());
+        assertTrue(job3.getLocation() instanceof Location);
+        assertEquals("StL", job3.getLocation().getValue());
+        assertTrue(job3.getPositionType() instanceof PositionType);
+        assertEquals("Back-end developer", job3.getPositionType().getValue());
+        assertTrue(job3.getCoreCompetency() instanceof CoreCompetency);
+        assertEquals("Java", job3.getCoreCompetency().getValue());
     }
 
     @Test

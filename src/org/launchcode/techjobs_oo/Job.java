@@ -13,9 +13,6 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
     public Job(){
         this.id=nextId;
         nextId++;
@@ -44,13 +41,7 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
-
-
-    public int getId() {
+ public int getId() {
         return id;
     }
 
@@ -93,7 +84,7 @@ public class Job {
     @Override
     public String toString() {
         int counter=0;
-        if ( positionType.getValue()== "" || positionType.getValue() == null){
+        if (positionType.getValue().equals("") || positionType.getValue() == null){
             this.positionType.setValue("Data not available");
             counter+=1;
         }
@@ -116,12 +107,18 @@ public class Job {
         if (counter==5){
             return "OOPS! This job does not seem to exist.";
         } else {
-            return  "\nID: " + this.id + "\n"+
-                    "Name: " + this.name +  "\n"+
-                    "Employer: " + this.employer + "\n"+
-                    "Location: " + this.location + "\n"+
-                    "Position Type: " + this.positionType + "\n"+
-                    "Core Competency: " + this.coreCompetency + "\n";
+//            return  "\nID: " + this.id + "\n"+
+//                    "Name: " + this.name +  "\n"+
+//                    "Employer: " + this.employer + "\n"+
+//                    "Location: " + this.location + "\n"+
+//                    "Position Type: " + this.positionType + "\n"+
+//                    "Core Competency: " + this.coreCompetency + "\n";
+            return String.format("\nID: %d\n" +
+                    "Name: %s\n" +
+                    "Employer: %s\n" +
+                    "Location: %s\n" +
+                    "Position Type: %s\n" +
+                    "Core Competency: %s\n", id, name, employer, location, positionType, coreCompetency);
         }
 
     }
